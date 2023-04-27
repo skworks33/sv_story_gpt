@@ -53,6 +53,12 @@ if __name__ == "__main__":
 
     filename = "sv.txt"
 
+    # スクリプトのあるディレクトリを取得
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # カレントディレクトリを変更
+    os.chdir(script_dir)
+
     # 空のリストを用意
     data_list = []
 
