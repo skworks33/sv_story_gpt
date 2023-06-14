@@ -11,7 +11,7 @@ def ask_chatgpt(question):
     try:
         # 3. ChatGPTに質問を投げる
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-3.5-turbo-0613",
             messages=[
                 {
                     "role": "system",
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     selected_item = random.choice(data_list)
 
     # 質問を設定
-    question = f"あなたはプロの作家です。以下の入力文はある企業が培ってきたマインドの中の１つです。制約条件を元に文章を作成してください。\n\n制約条件: ###\n* '入力文(マインド)'に関連した興味深い話題を500文字以内で作成してください。\n* 禁止用語は一切使わないでください。\n###\n\n入力文(マインド): ###\n{selected_item}\n###\n\n禁止用語: ###\n社訓\n社員\n買収\n本社\n###"
+    question = f"あなたはプロの作家です。以下の入力文はある企業が培ってきたマインドの中の１つです。制約条件を元に文章を作成してください。\n\n制約条件: ###\n* '入力文(マインド)'に関連した興味深い話題を500文字以内で作成してください。\n* 禁止用語は一切使わないでください。\n###\n\n入力文(マインド): ###\n{selected_item}\n###\n\n禁止用語: ###\n社訓\n従業員\n社員\n買収\n本社\n買収\nM&A\n子会社\nクレーム\n賃金\n###"
 
     # ChatGPTに質問し、結果を取得
     answer = ask_chatgpt(question)
